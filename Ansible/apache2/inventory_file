@@ -1,0 +1,7 @@
+[webservers]
+worker
+[dbservers]
+worker2
+[datacenter:children]
+webservers
+dbservers
