@@ -1,0 +1,8 @@
+---
+- hosts: workers
+  become: true
+  become_method: sudo
+  tasks:
+          - name: installing skype 
+            snap: name=skype state=present
+

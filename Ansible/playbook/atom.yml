@@ -1,0 +1,7 @@
+---
+- hosts: workers
+  become_user: yes
+  tasks:
+          - name: installing atom text editor
+            apt: name=atom state=present
+

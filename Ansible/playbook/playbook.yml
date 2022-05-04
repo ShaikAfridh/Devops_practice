@@ -1,0 +1,8 @@
+---
+- hosts: workers
+  become_method: sudo
+  tasks:
+          - name: ensure that apache is installed
+            apt: name=apache2 state=present
+          - name: start apache services
+            service: name=apache2 enabled=yes state=started
