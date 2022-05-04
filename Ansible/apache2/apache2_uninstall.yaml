@@ -1,0 +1,9 @@
+---
+- hosts: workers
+  become: true
+  become_method: sudo
+  tasks:
+          - name: uninstall apache
+            apt:
+              name: apache2
+              state: absent
