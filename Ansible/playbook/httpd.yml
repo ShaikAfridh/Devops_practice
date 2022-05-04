@@ -1,0 +1,8 @@
+---
+  - name: httpd is there
+    hosts: workers
+    task:
+      - name: ensure httpd is installed
+         apt:
+           name: httpd
+           state: latest
