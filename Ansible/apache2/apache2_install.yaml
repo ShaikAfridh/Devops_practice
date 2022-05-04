@@ -1,0 +1,17 @@
+---
+- 
+  hosts: workers #add host file
+  remote_user: ansible
+  become: true
+  become_method: sudo
+  tasks:
+    - name: install apache
+      apt: "name=apache2 state=latest"
+      notify:
+        - replace index.html
+  handlers:
+     - name: replace index.html
+       copy:
+         src: /var/www/html/afridi.txt
+         dest: /home/ansible/copy/
+       register: index_file
